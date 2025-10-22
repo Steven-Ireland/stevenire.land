@@ -9,6 +9,7 @@ const GH_IMPROVEMENTML = 'https://github.com/Steven-Ireland/ImprovementML-Brain'
 const GH_KRAKENSHEET = 'https://github.com/Steven-Ireland/krakensheet.com';
 const GH_BLOG = 'https://github.com/Steven-Ireland/stevenire.land';
 const GH_SPAM = 'https://github.com/Steven-Ireland/spam';
+const GH_ACAPELLA = 'https://github.com/Steven-Ireland/Robot-Acapella';
 const BRICK_URL = 'https://brick-cms.com';
 
 const About = ({ data }) => {
@@ -20,11 +21,7 @@ const About = ({ data }) => {
       </div>
       
       <p>
-        I'm Steven Ireland, a lifelong Software Engineer most recently working as a Staff Engineer at Cadre. 
-      </p>
-      <p>
-        In my day job I define high level system architecture, facilitate tough conversations and drive organizational alignment,
-        and partner closely with product managers to create, shape, and deliver new platform features.
+        I'm Steven Ireland, a lifelong Software Engineer most recently working at Netflix. 
       </p>
       <p>
         Outside of work, I hack on a slew of projects including:
@@ -34,12 +31,9 @@ const About = ({ data }) => {
         <li>A tiny general-purpose load testing tool built in Go <a href={GH_SPAM}><Link size={12}/></a></li>
         <li>A Reinforcement Learning based Unity Game where fantastical creatures learn to walk <a href={GH_IMPROVEMENTML}><Link size={12}/></a></li>
         <li>A Next-Generation character sheet application for tabletop games built with React, Redux, and Node.js <a href={GH_KRAKENSHEET}><Link size={12}/></a></li>
+        <li>An interpreter to mash song lyrics and notes into Stephen Hawking's voice synth <a href={GH_ACAPELLA}><Link size={12}/></a></li>
         <li>And this website you're reading right now! <a href={GH_BLOG}><Link size={12}/></a></li>
       </ul>
-      <p>
-        If you're working on an interesting, tough, or ambiguous problem and need some help, feel free to reach out and 
-        say hello. 
-      </p>
 
       <section className="Contact">
         <a href="mailto:steven.ireland+sitecontact@protonmail.com">
@@ -47,9 +41,6 @@ const About = ({ data }) => {
         </a>
         <a href="https://www.linkedin.com/in/steven-ireland-6b545774/">
           <Linkedin /> Linkedin
-        </a>
-        <a href="/resume.pdf">
-          <FileText /> Resumé
         </a>
       </section>
     </section>
