@@ -8,6 +8,8 @@
   --border: #30363d;
   --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
   --font-mono: SFMono-Regular, Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  --scanline-height: 500px;
+  --scanline-brightness: 0.05;
 }
 
 body {
@@ -24,6 +26,10 @@ body {
   padding: 0 20px;
   display: flex;
   flex-direction: column;
+  min-height: 100vh;
+}
+
+.Main {
   min-height: 100vh;
 }
 
@@ -173,6 +179,7 @@ a:hover {
 
 .Post .PostContent {
   font-size: 1.05em; /* Slightly larger for reading */
+  margin-bottom: 4em;
 }
 
 /* Contact / Profile */
@@ -230,6 +237,16 @@ a:hover {
   margin: 0;
 }
 
+.Footer {
+  margin-top: 2em;
+  padding: 0em 0 2em 0;
+  border-top: 1px solid var(--border);
+  color: var(--text-muted);
+  font-size: 0.9em;
+  font-family: var(--font-mono);
+  text-align: center;
+}
+
 /* Code Blocks Override */
 /* We want to override Prism styles to match our theme */
 code[class*="language-"],
@@ -239,6 +256,28 @@ pre[class*="language-"] {
   font-family: var(--font-mono) !important;
   font-size: 0.9em !important;
   text-shadow: none !important;
+}
+
+@keyframes scanline {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100vh); }
+}
+
+.ScanlineAnimation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--scanline-height);
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(46, 160, 67, var(--scanline-brightness)) 50%,
+    transparent 100%
+  );
+  opacity: 1;
+  pointer-events: none;
+  animation: scanline 20s linear infinite;
 }
 
 /* The container for the code block */
