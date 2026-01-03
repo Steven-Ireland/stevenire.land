@@ -1,148 +1,274 @@
+:root {
+  --bg-color: #0d1117;
+  --card-bg: #161b22;
+  --text-main: #c9d1d9;
+  --text-muted: #8b949e;
+  --accent: #2ea043; /* Github-like green, tasteful */
+  --accent-bright: #3fb950;
+  --border: #30363d;
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  --font-mono: SFMono-Regular, Consolas, "Liberation Mono", Menlo, Courier, monospace;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  font-family: var(--font-sans);
+  margin: 0;
+  line-height: 1.6;
+}
 
 .Page {
-  max-width: 800px;
+  max-width: 860px;
   margin: auto;
+  padding: 0 20px;
   display: flex;
   flex-direction: column;
+  min-height: 100vh;
 }
 
+/* Banner */
 .Banner {
-  display: inline-flex;
-  flex-grow: 1;
-  justify-content: space-evenly;
+  display: flex;
+  justify-content: space-between;
   align-items: center;
+  padding: 2em 0;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 0;
 }
 
-h1, h2 {
-  font-family: "Roboto";
+.Banner h1 {
+  font-size: 1.5em;
+  margin: 0;
+  font-weight: 700;
+  letter-spacing: -0.5px;
 }
 
+.Banner h2 {
+  font-size: 1em;
+  margin: 0;
+  font-weight: 400;
+  font-family: var(--font-mono); /* Keep headers/nav slightly techy if desired, or remove */
+}
+
+.Banner a {
+  text-decoration: none;
+  color: var(--accent-bright);
+  transition: color 0.2s;
+}
+
+.Banner a:hover {
+  text-decoration: underline;
+  color: var(--accent);
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--text-main);
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+  font-weight: 600;
+}
+
+ul, ol {
+  list-style: none;
+  padding-left: 1em;
+}
+
+li {
+  position: relative;
+  padding-left: 1.5em;
+  margin-bottom: 0.5em;
+}
+
+li::before {
+  content: ">";
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-weight: bold;
+  font-family: var(--font-mono);
+}
+
+a {
+  color: var(--accent-bright);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Posts List */
 .PostListing {
-  margin-top: 4em;
+  margin-top: 0.5em;
 }
 
 .PostPreviewContainer {
-  transition: 0.5s;
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  margin-bottom: 2em;
+  background-color: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  margin-bottom: 1.5em;
+  transition: transform 0.2s, border-color 0.2s;
 }
 
 .PostPreviewContainer:hover {
-  transform: translateY(-5px);
-  box-shadow: 0px 5px 10px 0px #eee;
+  transform: translateY(-2px);
+  border-color: var(--accent);
 }
 
 .PostPreviewContainer a {
   text-decoration: none;
   color: inherit;
+  display: block;
 }
 
 .PostPreview {
-  display: flex;
-  flex-direction: column;
-
   padding: 1.5em;
 }
 
 .PostPreview .Header {
-  display: inline-flex;
+  display: flex;
   flex-direction: row;
   align-items: baseline;
   justify-content: space-between;
+  margin-bottom: 0.5em;
 }
 
-.PostPreview .Header h1, .PostPreview .Header h2 {
-  margin-bottom: 0px;
-  margin-top: 0px;
+.PostPreview .Header h1 {
+  font-size: 1.25em;
+  margin: 0;
+  color: var(--accent-bright);
+}
+
+.PostPreview .Header h2 {
+  font-size: 0.9em;
+  color: var(--text-muted);
+  font-weight: normal;
+  margin: 0;
+  font-family: var(--font-mono);
 }
 
 .PostPreview p {
-  margin-bottom: 0px;
+  margin: 0;
+  color: var(--text-main);
+  font-size: 0.95em;
 }
 
-.PostPreview h2 {
-  font-size: 1em;
-}
-
-.Banner h1 {
-  font-size: 2em;
-  flex-grow: 1;
-}
-
-.Banner h2 {
-  font-size: 1.5em;
-  margin-left: 1em;
-}
-
-.Banner a {
-  /* text-decoration: none; */
-  color: inherit;
-}
-
+/* Individual Post */
 .Post h1 {
-  font-size: 3em;
-  margin-bottom: 10px;
+  font-size: 2.5em;
+  margin-top: 0.5em;
+  margin-bottom: 0em;
+  color: var(--text-main);
+  padding-bottom: 0em;
 }
 
 .Post h2 {
-  font-size: 1.5em;
-  margin: 0px;
+  color: var(--accent-bright);
+  margin-top: 0em;
+  padding-bottom: 0.5em;
+  border-bottom: 1px solid var(--border);
+}
+
+.Post .PostContent {
+  font-size: 1.05em; /* Slightly larger for reading */
+}
+
+/* Contact / Profile */
+.Contact {
+  margin-top: 3em;
+  margin-bottom: 3em;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
 }
 
 .Contact a {
   display: inline-flex;
-  padding: 1em;
-  margin-top: 2em;
-  border-radius: 10px;
-  border: 1px solid #ddd;
   align-items: center;
-
-  text-decoration: none;
-  color: inherit;
-
-  transition: 0.5s;
-}
-
-.Contact a:not(:last-child) {
-  margin-right: 1em;
-}
-
-.Contact svg {
-  margin-right: 0.5em;
+  padding: 0.75em 1.25em;
+  background-color: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  color: var(--text-main);
+  font-size: 0.9em;
+  transition: all 0.2s ease;
 }
 
 .Contact a:hover {
-  transform: translateY(-5px);
-  box-shadow: 0px 5px 10px 0px #eee;
+  border-color: var(--accent);
+  color: var(--accent-bright);
+  transform: translateY(-2px);
+  text-decoration: none;
 }
 
-.Post .PostContent {
-  font-family: "Roboto";
-  margin-top: 2em;
-}
-
-.gatsby-highlight pre[class*="language-"] {
-  border-radius: 10px;
+.Contact svg {
+  margin-right: 0.75em;
+  fill: none; /* Lucide icons usually use stroke */
+  stroke: currentColor;
 }
 
 .profile {
-  padding-top: 2em;
-  display: inline-flex;
-  vertical-align: middle;
-}
-
-.profile h1 {
-  margin: auto;
-  margin-left: 1em;
+  padding: 2em 0;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 2em;
 }
 
 .profile-picture {
-  width: 100px;
-  height: 100px;
-  border-radius: 100%;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 2px solid var(--border);
+  margin-right: 1.5em;
 }
 
-.About p, .About li, .About h1 {
-  font-family: "Roboto";
+.profile h1 {
+  font-size: 1.5em;
+  margin: 0;
+}
+
+/* Code Blocks Override */
+/* We want to override Prism styles to match our theme */
+code[class*="language-"],
+pre[class*="language-"] {
+  color: var(--text-main) !important;
+  background: none !important;
+  font-family: var(--font-mono) !important;
+  font-size: 0.9em !important;
+  text-shadow: none !important;
+}
+
+/* The container for the code block */
+.gatsby-highlight {
+  background-color: #161b22 !important; /* Matches card bg or slightly darker */
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  margin: 1.5em 0;
+  padding: 1em;
+  overflow: auto;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"],
+code {
+  background-color: rgba(110, 118, 129, 0.4);
+  color: var(--text-main);
+  padding: 0.2em 0.4em;
+  border-radius: 6px;
+  font-family: var(--font-mono);
+  font-size: 0.85em;
+}
+
+blockquote {
+  border-left: 4px solid var(--accent);
+  margin: 1.5em 0;
+  padding-left: 1em;
+  color: var(--text-muted);
+  font-style: italic;
+  background-color: rgba(46, 160, 67, 0.1); /* Subtle green tint */
+  padding: 1em;
+  border-radius: 0 6px 6px 0;
 }
