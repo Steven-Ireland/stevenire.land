@@ -9,6 +9,7 @@ const GH_BLOG = 'https://github.com/Steven-Ireland/stevenire.land';
 const GH_SPAM = 'https://github.com/Steven-Ireland/spam';
 const GH_ACAPELLA = 'https://github.com/Steven-Ireland/Robot-Acapella';
 const BRICK_URL = 'https://brick-cms.com';
+const SAGE_WISE_URL = 'https://www.sagewisereviews.com';
 
 const About = () => {
   return (
@@ -26,11 +27,12 @@ const About = () => {
           Outside of work, I hack on a slew of projects including:
         </p>
         <ul>
-          <li>A GraphQL-first CMS platform, built with Next.js and Apollo Server <a href={BRICK_URL}><LinkIcon size={12}/></a></li>
           <li>A tiny general-purpose load testing tool built in Go <a href={GH_SPAM}><LinkIcon size={12}/></a></li>
-          <li>A Reinforcement Learning based Unity Game where fantastical creatures learn to walk <a href={GH_IMPROVEMENTML}><LinkIcon size={12}/></a></li>
-          <li>A Next-Generation character sheet application for tabletop games built with React, Redux, and Node.js <a href={GH_KRAKENSHEET}><LinkIcon size={12}/></a></li>
           <li>An interpreter to mash song lyrics and notes into Stephen Hawking's voice synth <a href={GH_ACAPELLA}><LinkIcon size={12}/></a></li>
+          <li>An AI-driven product review site <a href={SAGE_WISE_URL}><LinkIcon size={12}/></a></li>
+          <li>A Reinforcement Learning based Unity Game where fantastical creatures learn to walk <a href={GH_IMPROVEMENTML}><LinkIcon size={12}/></a></li>
+          <li>A GraphQL-first CMS platform, built with Next.js and Apollo Server <a href={BRICK_URL}><LinkIcon size={12}/></a></li>
+          <li>A Next-Generation character sheet application for tabletop games built with React, Redux, and Node.js <a href={GH_KRAKENSHEET}><LinkIcon size={12}/></a></li>
           <li>And this website you're reading right now! <a href={GH_BLOG}><LinkIcon size={12}/></a></li>
         </ul>
 

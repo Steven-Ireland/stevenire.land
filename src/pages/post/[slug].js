@@ -1,10 +1,20 @@
 import React from "react";
 import Layout from '../../components/Layout';
+import Head from 'next/head';
 import { getPostBySlug, getAllPosts, markdownToHtml } from '../../lib/api';
 
 const PostTemplate = ({ post }) => {
+  const description = post.excerpt || post.content.substring(0, 160).replace(/<[^>]*>?/gm, '') + '...';
+
   return (
     <Layout>
+      <Head>
+        <title key="title">{`${post.title} | Steven Ireland`}</title>
+        <meta name="description" content={description} />
+        <meta property="og:title" content={post.title} />
+        <meta property="og:description" content={description} />
+        <meta property="og:type" content="article" />
+      </Head>
       <section className="PostContainer">
         <div className="Post">
           <h1>{post.title}</h1>
