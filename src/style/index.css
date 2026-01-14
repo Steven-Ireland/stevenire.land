@@ -68,6 +68,16 @@ body {
   color: var(--accent);
 }
 
+@media (max-width: 600px) {
+  .Banner {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1em;
+    padding: 1.5em 0;
+  }
+}
+
 /* Typography */
 h1, h2, h3, h4, h5, h6 {
   color: var(--text-main);
